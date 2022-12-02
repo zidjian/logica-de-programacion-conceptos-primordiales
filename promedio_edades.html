@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promedio de edades de una famialia</title>
+</head>
+<body>
+    <script>
+
+        function saltarLinea() {
+            document.write("<br>");    
+            document.write("<br>");    
+            document.write("<br>");    
+        }  
+    
+        function imprimir(frase) {
+            document.write(frase);
+            saltarLinea();
+        }
+
+        var cant_meimbros = parseInt( prompt( 'Ingrese la cantidad de miembros de su familia.' ) );
+        var contador = 1;
+        var total_edades = 0 ;
+
+        while( contador <= cant_meimbros ) {
+            edad = parseInt( prompt( 'Ingrese la edad del familiar.' ) );
+            total_edades += edad;
+            contador++;
+        }
+
+        promedio_edades = total_edades / cant_meimbros;
+
+        imprimir( 'Total de las edades ' + promedio_edades ); 
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice de masa corporal mejorado</title>
+</head>
+<body>
+    <script>
+        function saltarLinea ( veces ) {
+            for(let i = 0; i < veces; i++) {
+                document.write( '<br>' );
+            }
+        }
+
+        function imprimir ( frase ) {
+            document.write( frase );
+            saltarLinea(2)
+        }
+
+        function calcularImc ( peso, altura ) {
+            let imc = peso / ( altura * altura );
+            
+            return Math.round( imc );
+        }
+
+        var nombre = prompt( 'Ingrese su nombre' );
+        var peso = prompt( 'Ingrese su peso' );
+        var altura = prompt( 'Ingrese su altura' );
+
+        imc_calculado = calcularImc( peso, altura );
+
+        imprimir( nombre + ' tu indice de masa corporal es ' + imc_calculado );
+
+        if( imc_calculado < 18.5 ) {
+            imprimir( 'IMC es debajo del promedio' );
+        }
+
+        if( imc_calculado >= 18.5 && imc_calculado < 25 ) {
+            imprimir( 'IMC es esta dentro del intervao normal' );
+        }
+
+        if( imc_calculado >= 25 && imc_calculado < 30 ) {
+            imprimir( 'IMC es considerado como sobre peso' );
+        }
+
+        if( imc_calculado >= 30 ) {
+            imprimir( 'IMC es considerado como obesidad' );
+        }
+    </script>
+</body>
+</html>

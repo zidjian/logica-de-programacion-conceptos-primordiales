@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de adivinación 2</title>
+</head>
+<body>
+    <script>
+
+        function saltarLinea() {
+            document.write("<br>");    
+            document.write("<br>");    
+            document.write("<br>");    
+        }  
+    
+        function imprimir(frase) {
+            document.write(frase);
+            saltarLinea();
+        }
+
+        var primer_mundial = 1930;
+        var hasta_anio = parseInt( prompt( 'Ingrese el año hasta donde quiere calcular' ) );
+
+        while( primer_mundial <= hasta_anio ) {
+            imprimir( 'El primer mundial de la Fifa fue en ' + primer_mundial );
+            primer_mundial = primer_mundial + 4;
+        }
+    
+    </script>
+</body>
+</html>

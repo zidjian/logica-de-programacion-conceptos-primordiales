@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evitar números duplicados con Math.random</title>
+</head>
+<body>
+    <input type="text">
+    <button>Adivinar</button>
+
+    <script>
+
+        function aleatorio() {
+            return Math.round( Math.random() * 10 );
+        }
+
+        function genrarNumAleatorios( cantidad ) {
+            var secreto = [];
+            var contador = 1;
+
+            while( contador <= cantidad ) {
+                var numero_aleatorio = aleatorio();
+                var duplicado = false;
+
+                if( numero_aleatorio != 0 ) {
+                    for( let i = 0; i < secreto.length; i++ ) {
+                        if( secreto[ i ] == numero_aleatorio ) {
+                            duplicado = true;
+                            break;
+                        }
+                    }
+                    if( duplicado == false ) {
+                        secreto.push( numero_aleatorio );
+                        contador++;
+                    }
+                }
+            }
+
+            return secreto;
+        }
+
+        var mi_array = genrarNumAleatorios( 4 );
+        console.log( mi_array );
+
+    </script>
+</body>
+</html>

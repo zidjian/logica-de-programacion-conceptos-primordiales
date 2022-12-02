@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinar número con un input y un boton</title>
+</head>
+<body>
+    <input type="text">
+    <button>Adivinar</button>
+
+    <script>
+
+        var mi_array = [1, 5, 7, 9];
+
+        var valor_elegido = Math.round( Math.random() * 10 );
+        var input =  document.querySelector( 'input' );
+        var boton = document.querySelector( 'button' );
+        input.focus();
+        var encontrado = false;
+
+        function adivinar() {
+
+            for( let posicion = 0; posicion < 4; posicion++ ) {
+                
+                if( parseInt( input.value ) == mi_array[ posicion ] ) {
+                    alert( 'Has acertado' );
+                    encontrado = true;
+                    break;
+                }
+            }
+            if( encontrado == false ) {
+                alert( 'No has acertado' );
+            }
+            input.value = '';
+            input.focus();
+        }
+
+        boton.onclick = adivinar;
+    </script>
+</body>
+</html>
